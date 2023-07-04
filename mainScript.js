@@ -65,7 +65,7 @@ mergeSortAlgo.addEventListener('click', function(e) {
 quickSortAlgo.addEventListener('click', function(e) {
   disableAllButtons();
   displayTimeComplexity.innerHTML="O(N LOG N)";
-  displaySpaceComplexity.innerHTML="O(LOG N)" 
+  displaySpaceComplexity.innerHTML="O(1) + O(N) auxiliary stack space" 
   quickSortAlgo.style.backgroundColor="red";
   quickSort();
 });
