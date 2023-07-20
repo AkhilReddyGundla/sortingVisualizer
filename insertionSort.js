@@ -1,5 +1,6 @@
 async function insertionSort() {
   let n = values.length;
+  algoRunning=true;
   for (let i = 1; i < n; i++) {
     let current = values[i];
     let j = i - 1;
@@ -34,4 +35,5 @@ async function insertionSort() {
 
   insertionSortAlgo.style.background = "none";
   enableAllButtons();
+  algoRunning=false;
 }
