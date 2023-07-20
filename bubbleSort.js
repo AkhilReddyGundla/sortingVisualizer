@@ -1,4 +1,5 @@
 async function bubbleSort() {
+  algoRunning=true;
   for (let i = 0; i < arrSize; i++) {
     for (let j = 0; j < arrSize - i - 1; j++) {
       divs[j].style.backgroundColor = "blue";
@@ -22,5 +23,6 @@ async function bubbleSort() {
     divs[i].style.backgroundColor = "green";
   }
   bubbleSortAlgo.style.background="none";
+  algoRunning=false;
   enableAllButtons();
 }
