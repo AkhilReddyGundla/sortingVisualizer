@@ -1,6 +1,6 @@
 async function selectionSort() {
   let inputSize = values.length;
-
+  algoRunning=true;
   for (let i = 0; i < inputSize - 1; i++) {
     let minElement = values[i];
     let minIndex = i;
@@ -39,4 +39,5 @@ async function selectionSort() {
   }
   selectionSortAlgo.style.background = "none";
   enableAllButtons();
+  algoRunning=false;
 }
