@@ -4,7 +4,6 @@ let values = [];
 let divs = [];
 let arrSize = 20; // Initial array size
 const rangeInput = document.getElementById("size");
-const speed = document.getElementById("speed");
 const displaySize = document.querySelector(".displaySize")
 const getNewArr = document.querySelector(".newArrayGen");
 const graph = document.querySelector(".graph");
@@ -13,9 +12,12 @@ const insertionSortAlgo = document.querySelector(".insertionSort")
 const selectionSortAlgo =document.querySelector(".selectionSort")
 const mergeSortAlgo = document.querySelector(".mergeSort");
 const quickSortAlgo = document.querySelector(".quickSort");
+const algorithm=document.querySelector(".algorithm")
 let displayTimeComplexity = document.querySelector(".displayTimeComplexity");
 let displaySpaceComplexity = document.querySelector(".displaySpaceComplexity");
 // Event listeners
+
+//Done by Akhil.G
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -30,44 +32,75 @@ document.addEventListener('DOMContentLoaded', function() {
 getNewArr.addEventListener('click', function() {
   generateArray();
 });
-
-bubbleSortAlgo.addEventListener('click', function(e) {
+let algoRunning=false;
+bubbleSortAlgo.addEventListener('click', async function(e) {
+  if(algoRunning === false){
   bubbleSortAlgo.style.backgroundColor="red";
   disableAllButtons();
   displayTimeComplexity.innerHTML="O(N<sup>2</sup>)";
   displaySpaceComplexity.innerHTML="O(1)" 
-  bubbleSort();
+  await bubbleSort();
+  }
+  else{
+    alert("algorithm is running please wait or reload the page");
+    bubbleSortAlgo.style.backgroundColor="transparent";
+  }
 });
-insertionSortAlgo.addEventListener('click', function(e) {
+insertionSortAlgo.addEventListener('click', async function(e) {
+  if(algoRunning === false){
   disableAllButtons();
   displayTimeComplexity.innerHTML="O(N<sup>2</sup>)";
   displaySpaceComplexity.innerHTML="O(1)" 
   insertionSortAlgo.style.backgroundColor="red";
-  insertionSort();
+  await insertionSort();
+  }
+  else{
+  alert("algorithm is running please wait or reload the page")
+  insertionSortAlgo.style.backgroundColor="transparent";
+  }
+
 });
 
-selectionSortAlgo.addEventListener('click', function(e) {
+selectionSortAlgo.addEventListener('click', async function(e) {
+  if(algoRunning === false){
   disableAllButtons();
   selectionSortAlgo.style.backgroundColor="red";
   displayTimeComplexity.innerHTML="O(N<sup>2</sup>)";
   displaySpaceComplexity.innerHTML="O(1)" 
-  selectionSort();
+  await selectionSort();
+  }
+  else{
+    alert("algorithm is running please wait or reload the page")
+    selectionSortAlgo.style.backgroundColor="transparent";
+    }
 });
 
-mergeSortAlgo.addEventListener('click', function(e) {
+mergeSortAlgo.addEventListener('click', async function(e) {
+  if(algoRunning === false){
   disableAllButtons();
   mergeSortAlgo.style.backgroundColor="red";
   displayTimeComplexity.innerHTML="O(N LOG N)";
   displaySpaceComplexity.innerHTML="O(N)" 
-  mergeSort();
+  await mergeSort();
+  }
+  else{
+    alert("algorithm is running please wait or reload the page")
+    mergeSortAlgo.style.backgroundColor="transparent";
+    }
 });
 
-quickSortAlgo.addEventListener('click', function(e) {
+quickSortAlgo.addEventListener('click', async function(e) {
+  if(algoRunning === false){
   disableAllButtons();
   displayTimeComplexity.innerHTML="O(N LOG N)";
   displaySpaceComplexity.innerHTML="O(1) + O(N) auxiliary stack space" 
   quickSortAlgo.style.backgroundColor="red";
-  quickSort();
+  await quickSort();
+  }
+  else{
+    alert("algorithm is running please wait or reload the page")
+    quickSortAlgo.style.backgroundColor="transparent";
+    }
 });
 
 // Utility function to generate random values for the array
@@ -114,8 +147,6 @@ function swap(i, j) {
 
 function disableAllButtons(){
   rangeInput.setAttribute('disabled','');
-  console.log(getNewArr)
-  console.log(rangeInput)
   getNewArr.setAttribute('disabled', '');
   bubbleSortAlgo.setAttribute('disabled','');
   selectionSortAlgo.setAttribute('disabled','');
