@@ -1,4 +1,5 @@
 async function mergeSort() {
+  algoRunning=true;
     await doMergeSort(0, arrSize - 1);
     // Set color of all bars to green after sorting
     for (let i = 0; i < arrSize; i++) {
@@ -6,6 +7,7 @@ async function mergeSort() {
     }
     mergeSortAlgo.style.background = "none";
     enableAllButtons();
+    algoRunning=false;
   }
   
   async function doMergeSort(low, high) {
