@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SortIt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaquries.css">
+</head>
+<body >
+    <div class="nav">
+        <h1 class="main-heading">SortIt<sub>(A sorting visualizer project...)</sub></h1>
+        <div class="algos">
+            <h3 class="algorithm bubbleSort">Bubble Sort</h3>
+            <h3 class="algorithm selectionSort">Selection Sort</h3>
+            <h3 class="algorithm mergeSort">Merge Sort</h3>
+            <h3 class="algorithm insertionSort">Insertion Sort</h3>
+            <h3 class="algorithm quickSort">Quick Sort</h3>
+        </div>
+    </div>
+    <!-- <marquee direction="left"><p class="note">Don't select any algorithm when a selected algorithm is running and prefer big screen for better visual experience.</p></marquee> -->
+    <div class="mian">
+        <div class="inputs">
+            <h3 class="input-heading">Array Size : <input type="range" class="arraySize " id="size" min="2" max="200" step="1" value="50" > <h4 class="displaySize"></h4></h3>
+
+        </div>
+        <button class="newArrayGen">Generate new Array</button>
+        <div class="complexities">
+            <div class="timeComplexity">
+                <h4 style="display:flex">Time Complexity : <p class="displayTimeComplexity"> </p></h4>  
+                <br>
+            </div>
+            <div class="spaceComplexity">
+                <h4 style="display:flex">Space Complexity : <p class="displaySpaceComplexity"> </p></h4>
+            </div>
+            <h4>N is the Size of the array</h4>
+            <p class="description"></p>
+        </div>
+        <div class="graph">
+
+        </div>
+        <h4>****Refresh the page after algorithm is executed.</h4>
+    </div>
+    <script src="mainScript.js"></script>
+    <script src="bubbleSort.js"></script>
+    <script src="selectionSort.js"></script>
+    <script src="mergeSort.js"></script>
+    <script src="insertionSort.js"></script>
+    <script src="quickSort.js"></script>
+</body>
+</html>

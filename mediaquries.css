@@ -1,0 +1,32 @@
+@media screen and (max-width : 1024px) {
+    .algorithm{
+        font-size: 1rem;
+    }
+    .timeComplexity,.spaceComplexity{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width : 768px){
+    .main-heading{
+        font-size: 1.3rem;
+    }
+    .note{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width : 425px){
+    .newArrGen{
+        font-size: 1rem;
+    }
+    .input-heading{
+        font-size: 1.1rem;
+    }
+    .arraySize{
+        size: 1rem;
+    }
+    .displaySize{
+        font-size: 1.5rem;
+    }
+    
+}
